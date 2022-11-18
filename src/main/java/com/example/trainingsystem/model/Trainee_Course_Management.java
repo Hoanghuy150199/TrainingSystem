@@ -21,7 +21,7 @@ public class Trainee_Course_Management {
     //Add Exercises (Array of Obj: ExerciseDescription + Type + Submission + Mark + Weight)
     //Add QA (Array of Obj: Comment + Author + DateOfComment)
 
-    private ArrayList<Object> FinalExam;
+    private Object FinalExam;
     //Add Type + Submission + Mark1st + Mark2nd + Weight
 
     private int TotalScore;
