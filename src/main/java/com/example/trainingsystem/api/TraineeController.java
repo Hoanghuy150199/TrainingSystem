@@ -1,4 +1,4 @@
-package com.example.trainingsystem.controller;
+package com.example.trainingsystem.api;
 
 public class TraineeController {
     //Write API here
