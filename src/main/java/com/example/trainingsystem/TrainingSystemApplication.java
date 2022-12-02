@@ -1,24 +1,37 @@
 package com.example.trainingsystem;
 
-import com.mongodb.MongoException;
-import com.mongodb.client.*;
-import com.mongodb.client.model.Filters;
-import org.bson.BsonDocument;
-import org.bson.BsonInt64;
-import org.bson.Document;
-import org.bson.conversions.Bson;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.util.Iterator;
-import java.util.Scanner;
+import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
 public class TrainingSystemApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TrainingSystemApplication.class, args);
+//        SpringApplication.run(TrainingSystemApplication.class, args);
 
+        ApplicationContext context = SpringApplication.run(TrainingSystemApplication.class, args);
+//        Account acc = context.getBean(Account.class);
+//        System.out.println("Account Bean: " + acc);
+
+        /*
+        DatabaseConnector databaseConnector = context.getBean(DatabaseConnector.class);
+        databaseConnector.connect();
+         */
+
+        /*
+        Outfit outfit = context.getBean(Outfit.class);
+        System.out.println("Instance: " + outfit);
+        outfit.wear();
+
+        Girl girl = context.getBean(Girl.class);
+        System.out.println("Girl Instance: " + girl);
+        System.out.println("Girl Outfit: " + girl.outfit);
+        girl.outfit.wear();
+
+        */
+
+        /*
         String uri = "mongodb+srv://LET-PASS-TEAM:LET-PASS-TEAM@let-pass-team.g9qjbnz.mongodb.net/test";
 //        try (MongoClient mongoClient = MongoClients.create(uri)) {
 //            MongoDatabase database = mongoClient.getDatabase("TrainingSystem");
@@ -47,6 +60,8 @@ public class TrainingSystemApplication {
         String uname = (new Scanner(System.in)).nextLine();
         System.out.print("Input password: ");
         String pw = (new Scanner(System.in)).nextLine();
+
+
 
         //Find document using input username & check input password
         try {
@@ -78,6 +93,8 @@ public class TrainingSystemApplication {
 //        while(it.hasNext()){
 //            System.out.println(it.next());
 //        }
+
+        */
     }
 
 }

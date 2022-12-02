@@ -1,4 +1,4 @@
-package com.example.trainingsystem.model;
+package com.example.trainingsystem.models;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
-public class Skill {
+public class Department {
     private String Id;
-    private String SkillName;
+    private String DepartmentName;
 }
