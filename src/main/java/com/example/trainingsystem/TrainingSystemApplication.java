@@ -8,9 +8,9 @@ import org.springframework.context.ApplicationContext;
 public class TrainingSystemApplication {
 
     public static void main(String[] args) {
-//        SpringApplication.run(TrainingSystemApplication.class, args);
+        SpringApplication.run(TrainingSystemApplication.class, args);
 
-        ApplicationContext context = SpringApplication.run(TrainingSystemApplication.class, args);
+//        ApplicationContext context = SpringApplication.run(TrainingSystemApplication.class, args);
 //        Account acc = context.getBean(Account.class);
 //        System.out.println("Account Bean: " + acc);
 
