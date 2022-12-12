@@ -2,17 +2,15 @@ package com.example.trainingsystem.controllers;
 
 import com.example.trainingsystem.models.Account;
 import com.example.trainingsystem.services.AccountService;
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1")
-//@Controller
 public class AccountController {
     @Autowired
     AccountService accountService;
@@ -20,6 +18,11 @@ public class AccountController {
     @GetMapping("/accounts")
     public List<Account> getAllAccounts(){
         return accountService.getAllAccounts();
+    }
+
+    @GetMapping("/accounts/{id}")
+    public Account getAccountById(@PathVariable("id") ObjectId Id){
+        return accountService.getAccountById(Id);
     }
 
     /*

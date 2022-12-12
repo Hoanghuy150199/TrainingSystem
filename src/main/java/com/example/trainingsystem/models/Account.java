@@ -1,34 +1,37 @@
 package com.example.trainingsystem.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.example.trainingsystem.enums.ERole;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import javax.validation.constraints.NotBlank;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 @Document(collection = "Accounts")
 public class Account {
     @Id
-    private String Id;
+    @JsonProperty("_id")
+    private ObjectId _id;
 
-    @Field
+    @NotBlank
+    @Indexed(unique = true)
+    @JsonProperty("UserName")
     private String Username;
-    @Field
-    private String Password;
-    @Field
-    private String Role;
 
-    @Override
-    public String toString() {
-        return "Username='" + Username + '\'' +
-                ", Password='" + Password + '\'' +
-                '}';
-    }
+    @NotBlank
+    @JsonProperty("Password")
+    private String Password;
+
+    @Field
+    @JsonProperty("Role")
+    private ERole Role;
 }
