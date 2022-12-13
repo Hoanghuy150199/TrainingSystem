@@ -2,11 +2,11 @@ package com.example.trainingsystem.controllers;
 
 import com.example.trainingsystem.models.Account;
 import com.example.trainingsystem.services.AccountService;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -21,10 +21,24 @@ public class AccountController {
     }
 
     @GetMapping("/accounts/{id}")
-    public Account getAccountById(@PathVariable("id") ObjectId Id){
+    public ResponseEntity<Account> getAccountById(@PathVariable("id") String Id){
         return accountService.getAccountById(Id);
     }
 
+    @PostMapping("/accounts")
+    public ResponseEntity<Account> addAccount(@Valid @RequestBody Account account){
+        return accountService.addAccount(account);
+    }
+
+    @PutMapping("/accounts/{id}")
+    public ResponseEntity<Account> updateTrainee(@PathVariable(name = "id") String Id, @Valid @RequestBody Account account){
+        return accountService.updateAccount(Id, account);
+    }
+
+    @DeleteMapping("/accounts/{id}")
+    public String removeTraineeById(@PathVariable("id") String Id){
+        return accountService.removeAccountById(Id);
+    }
     /*
     //URL: localhost:8080/api/login
     @GetMapping("api/login")

@@ -20,11 +20,11 @@ import javax.validation.constraints.NotBlank;
 public class Account {
     @Id
     @JsonProperty("_id")
-    private ObjectId _id;
+    private String _id;
 
     @NotBlank
     @Indexed(unique = true)
-    @JsonProperty("UserName")
+    @JsonProperty("Username")
     private String Username;
 
     @NotBlank
