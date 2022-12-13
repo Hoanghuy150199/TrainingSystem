@@ -1,9 +1,8 @@
 package com.example.trainingsystem.models;
 
-import com.example.trainingsystem.enums.ERole;
+import com.example.trainingsystem.models.enums.ERole;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;

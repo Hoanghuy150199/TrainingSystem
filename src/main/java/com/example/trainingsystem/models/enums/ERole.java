@@ -1,4 +1,4 @@
-package com.example.trainingsystem.enums;
+package com.example.trainingsystem.models.enums;
 
 public enum ERole {
     admin,
