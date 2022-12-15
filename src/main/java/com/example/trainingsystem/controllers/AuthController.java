@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1")
 public class AuthController {
     @Autowired
-    AuthService authService;
+    private AuthService authService;
 
     //Login
     @PostMapping("/auth/signin")
@@ -20,7 +20,7 @@ public class AuthController {
 
 //    @PostMapping("/auth/signout")
 
-    // Phân quyền truy cập tài nguyên
+    // Phân quyền truy cập tài nguyên theo admin, trainee, trainer, upperManager
 //    @GetMapping("/test/admin")
 //
 //    @GetMapping("/test/trainee")

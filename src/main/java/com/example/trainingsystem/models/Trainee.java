@@ -21,6 +21,7 @@ import java.util.List;
 @Document(collection = "Trainees")
 public class Trainee {
     @Id
+    @JsonProperty("_id")
     private String _id;
 
     @NotBlank

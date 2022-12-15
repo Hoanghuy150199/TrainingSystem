@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class AccountController {
     @Autowired
-    AccountService accountService;
+    private AccountService accountService;
 
     @GetMapping("/accounts")
     public List<Account> getAllAccounts(){

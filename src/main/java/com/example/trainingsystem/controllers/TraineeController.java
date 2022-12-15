@@ -14,7 +14,7 @@ import java.util.List;
 @RequestMapping("/api/v1")
 public class TraineeController {
     @Autowired
-    TraineeService traineeService;
+    private TraineeService traineeService;
 
     @GetMapping("/trainees")
     public List<Trainee> getAllTrainee(){
