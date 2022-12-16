@@ -11,5 +11,5 @@ public class CompletedClass_Trainee {
     private String ClassName;
 
     @JsonProperty("TotalScore")
-    private int TotalScore;
+    private double TotalScore;
 }
