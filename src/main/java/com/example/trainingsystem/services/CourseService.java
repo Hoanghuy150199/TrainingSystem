@@ -31,7 +31,16 @@ public class CourseService {
 
     public List<Course> getCoursesByTrainerInfo(Course course){
         List<Course> courseData = courseRepository.findCoursesByTrainerInfo(course.getTrainerInfo());
-        System.out.println(courseData);
+        if(courseData.isEmpty()) {
+            return null;
+        }
+        else{
+            return courseData;
+        }
+    }
+
+    public List<Course> getCoursesByCourseName(Course course){
+        List<Course> courseData = courseRepository.findCoursesByCourseName(course.getCourseName());
         if(courseData.isEmpty()) {
             return null;
         }

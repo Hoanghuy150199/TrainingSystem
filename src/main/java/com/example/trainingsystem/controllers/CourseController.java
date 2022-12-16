@@ -32,7 +32,10 @@ public class CourseController {
         return courseService.getCoursesByTrainerInfo(course);
     }
 
-    @GetMapping("/courses/Course")
+    @GetMapping("/courses/CourseName")
+    public List<Course> getCoursesByCourseName(@RequestBody Course course){
+        return courseService.getCoursesByCourseName(course);
+    }
 
     @PostMapping("/courses")
     public ResponseEntity<Course> addCourse(@Valid @RequestBody Course course){

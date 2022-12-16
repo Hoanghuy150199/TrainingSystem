@@ -11,4 +11,7 @@ import java.util.List;
 public interface CourseRepository extends MongoRepository<Course, String> {
     @Query(" { 'TrainerInfo': ?0 } ")
     List<Course> findCoursesByTrainerInfo(String TrainerInfo);
+
+    @Query(" { 'CourseName': ?0 } ")
+    List<Course> findCoursesByCourseName(String CourseName);
 }
