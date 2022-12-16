@@ -2,7 +2,6 @@ package com.example.trainingsystem.controllers;
 
 import com.example.trainingsystem.models.Trainee;
 import com.example.trainingsystem.services.TraineeService;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +16,8 @@ public class TraineeController {
     private TraineeService traineeService;
 
     @GetMapping("/trainees")
-    public List<Trainee> getAllTrainee(){
-        return traineeService.getAllTrainee();
+    public List<Trainee> getAllTrainees(){
+        return traineeService.getAllTrainees();
     }
 
     @GetMapping("/trainees/{id}")

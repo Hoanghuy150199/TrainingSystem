@@ -2,7 +2,6 @@ package com.example.trainingsystem.services;
 
 import com.example.trainingsystem.models.Trainee;
 import com.example.trainingsystem.repositories.TraineeRepository;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +15,7 @@ public class TraineeService {
     @Autowired
     private TraineeRepository traineeRepository;
 
-    public List<Trainee> getAllTrainee(){
+    public List<Trainee> getAllTrainees(){
         return traineeRepository.findAll();
     }
 

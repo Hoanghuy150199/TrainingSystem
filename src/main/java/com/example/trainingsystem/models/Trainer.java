@@ -1,18 +1,22 @@
 package com.example.trainingsystem.models;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import javax.validation.constraints.Email;
 
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Document(collection = "Trainers")
 public class Trainer {
-    private String Id;
+    private String _id;
     private String Username;
     private String Password;
     private String TrainerName;
     private String Profile;
     private String Level;
-    private String Email;
+    private Email Email;
 }

@@ -18,8 +18,8 @@ public class CourseController {
     private CourseService courseService;
 
     @GetMapping("/courses")
-    public List<Course> getAllCourse(){
-        return courseService.getAllCourse();
+    public List<Course> getAllCourses(){
+        return courseService.getAllCourses();
     }
 
     @GetMapping("/courses/{id}")
@@ -31,6 +31,8 @@ public class CourseController {
     public List<Course> getCoursesByTrainerInfo(@RequestBody Course course){
         return courseService.getCoursesByTrainerInfo(course);
     }
+
+    @GetMapping("/courses/Course")
 
     @PostMapping("/courses")
     public ResponseEntity<Course> addCourse(@Valid @RequestBody Course course){

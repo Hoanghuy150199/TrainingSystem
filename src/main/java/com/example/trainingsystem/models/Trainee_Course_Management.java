@@ -1,8 +1,8 @@
 package com.example.trainingsystem.models;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.example.trainingsystem.models.embedded.Content_TCManagement;
+import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,11 +10,14 @@ import java.util.ArrayList;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
+@Document(collection = "Trainee_Course_Management")
 public class Trainee_Course_Management {
-    private String Id;
+    private String _id;
     private String TraineeName;
     private String CourseName;
-    private ArrayList<Object> Contents;
+    private ArrayList<Content_TCManagement> Contents;
     //Add ContentName
     //Add Documentation
     //Add Duration
@@ -29,4 +32,5 @@ public class Trainee_Course_Management {
     private String Level;
     private LocalDateTime EnrollmentDate;
     private LocalDateTime CompletedDate;
+    private int Rate;
 }
