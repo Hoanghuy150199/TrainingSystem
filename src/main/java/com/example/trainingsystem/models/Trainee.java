@@ -1,6 +1,7 @@
 package com.example.trainingsystem.models;
 
 import com.example.trainingsystem.models.embedded.CompletedClass_Trainee;
+import com.example.trainingsystem.models.enums.TraineeLevel;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -40,6 +41,12 @@ public class Trainee {
     @JsonProperty("ListOfClassesCompleted")
     private List<CompletedClass_Trainee> ListOfClassesCompleted; //Add ClassName + TotalScore
 
+    @JsonProperty("ListOfClassesLearning")
+    private List<String> ListOfClassesLearning;
+
+    @JsonProperty("ListOfClassesLiked")
+    private List<String> ListOfClassesLiked;
+
     @JsonProperty("Level")
-    private String Level;
+    private TraineeLevel Level;
 }

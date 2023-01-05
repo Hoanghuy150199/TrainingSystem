@@ -1,6 +1,7 @@
 package com.example.trainingsystem.services;
 
 import com.example.trainingsystem.models.Trainee;
+import com.example.trainingsystem.models.enums.TraineeLevel;
 import com.example.trainingsystem.repositories.TraineeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -26,6 +27,16 @@ public class TraineeService {
         }
         else{
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    public List<Trainee> getTraineesByLevel(Trainee trainee){
+        List<Trainee> traineeData = traineeRepository.findTraineesByLevel(trainee.getLevel());
+        if(traineeData.isEmpty()){
+            return null;
+        }
+        else{
+            return traineeData;
         }
     }
 
