@@ -41,6 +41,13 @@ namespace MongoDB_CRUD
             services.AddScoped<ITraineeCourseManagementService, TraineeCourseManagementService>();
             services.AddScoped<ITraineeCourseManagementRepository, TraineeCourseManagementRepository>();
             services.AddControllers();
+
+            services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,6 +65,8 @@ namespace MongoDB_CRUD
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors("MyPolicy");
 
             app.UseRouting();
 
