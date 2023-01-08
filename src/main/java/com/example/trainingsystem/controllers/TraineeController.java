@@ -1,6 +1,7 @@
 package com.example.trainingsystem.controllers;
 
 import com.example.trainingsystem.models.Trainee;
+import com.example.trainingsystem.models.enums.TraineeLevel;
 import com.example.trainingsystem.services.TraineeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,6 +24,11 @@ public class TraineeController {
     @GetMapping("/trainees/{id}")
     public ResponseEntity<Trainee> getTraineeById(@PathVariable(name = "id") String Id){
         return traineeService.getTraineeById(Id);
+    }
+
+    @GetMapping("/trainees/Level")
+    public List<Trainee> getTraineesByLevel(@RequestBody Trainee trainee){
+        return traineeService.getTraineesByLevel(trainee);
     }
 
     @PostMapping("/trainees")

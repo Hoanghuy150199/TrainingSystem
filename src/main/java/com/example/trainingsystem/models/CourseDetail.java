@@ -1,12 +1,11 @@
 package com.example.trainingsystem.models;
 
-import com.example.trainingsystem.models.embedded.QA_Questions_Answers;
+import com.example.trainingsystem.models.embedded.FinalExam_CourseDetail;
+import com.example.trainingsystem.models.embedded.Session_CourseDetail;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -14,18 +13,17 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Document(collection = "Questions_Answers")
-public class Questions_Answers {
-    @Id
+@Document(collection = "CourseDetails")
+public class CourseDetail {
     @JsonProperty("_id")
     private String _id;
 
     @JsonProperty("CourseName")
     private String CourseName;
 
-    @JsonProperty("SessionName")
-    private String SessionName;
+    @JsonProperty("ListOfSessions")
+    private List<Session_CourseDetail> ListOfSessions;
 
-    @JsonProperty("QA")
-    private List<QA_Questions_Answers> QA;
+    @JsonProperty("FinalExam")
+    private FinalExam_CourseDetail FinalExam;
 }
