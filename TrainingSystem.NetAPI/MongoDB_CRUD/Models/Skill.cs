@@ -11,5 +11,8 @@ namespace MongoDB_CRUD.Models
 
         public string SkillName { get; set; }
 
+        [BsonElement("_class")]
+        public string _class { get; set; }
+
     }
 }

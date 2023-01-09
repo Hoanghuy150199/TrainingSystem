@@ -36,6 +36,8 @@ namespace MongoDB_CRUD.Models
         [BsonElement("ListOfPreCourses")]
         public List<string> ListOfPreCourses { get; set; }
 
+        [BsonElement("_class")]
+        public string _class { get; set; }
 
 
     }
