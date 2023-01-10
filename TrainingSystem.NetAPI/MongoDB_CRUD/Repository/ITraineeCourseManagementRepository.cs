@@ -8,6 +8,7 @@ namespace MongoDB_CRUD.Repository
     {
         Task<List<TraineeCourseManagement>> GetAllAsync();
         Task<TraineeCourseManagement> GetByIdAsync(string id);
+        Task<TraineeCourseManagement> GetByNameAsync(string traineeName);
         Task<TraineeCourseManagement> CreateAsync(TraineeCourseManagement traineeCourseManagement);
         Task UpdateAsync(string id, TraineeCourseManagement traineeCourseManagement);
         Task DeleteAsync(string id);

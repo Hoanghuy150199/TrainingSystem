@@ -28,6 +28,10 @@ namespace MongoDB_CRUD.Repository
         {
             return _collection.Find(c => c.Id == id).FirstOrDefaultAsync();
         }
+        public Task<TraineeCourseManagement> GetByNameAsync(string traineeName)
+        {
+            return _collection.Find(c => c.TraineeName == traineeName).FirstOrDefaultAsync();
+        }
         public async Task<TraineeCourseManagement> CreateAsync(TraineeCourseManagement traineeCourseManagement)
         {
             await _collection.InsertOneAsync(traineeCourseManagement).ConfigureAwait(false);

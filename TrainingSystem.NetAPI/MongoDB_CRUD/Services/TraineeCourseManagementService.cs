@@ -23,6 +23,10 @@ namespace MongoDB_CRUD.Services
         {
             return _traineeCourseManagementRepository.GetByIdAsync(id);
         }
+        public Task<TraineeCourseManagement> GetByNameAsync(string traineeName)
+        {
+            return _traineeCourseManagementRepository.GetByNameAsync(traineeName);
+        }
 
         public Task<TraineeCourseManagement> CreateAsync(TraineeCourseManagement traineeCourseManagement)
         {

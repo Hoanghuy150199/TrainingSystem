@@ -29,6 +29,16 @@ namespace MongoDB_CRUD.Controllers
             }
             return Ok(traineeCourseManagement);
         }
+        [HttpGet("name/{traineeName}")]
+        public async Task<IActionResult> GetByName(string traineeName)
+        {
+            var traineeCourseManagement = await _traineeCourseManagementService.GetByNameAsync(traineeName).ConfigureAwait(false);
+            if (traineeCourseManagement == null)
+            {
+                return NotFound();
+            }
+            return Ok(traineeCourseManagement);
+        }
         [HttpPost]
         public async Task<IActionResult> Create(TraineeCourseManagement traineeCourseManagement)
         {
