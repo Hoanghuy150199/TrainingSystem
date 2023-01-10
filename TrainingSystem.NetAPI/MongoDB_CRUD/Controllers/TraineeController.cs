@@ -29,6 +29,16 @@ namespace MongoDB_CRUD.Controllers
             }
             return Ok(trainee);
         }
+        [HttpGet("username/{username}")]
+        public async Task<IActionResult> GetByName(string username)
+        {
+            var trainee = await _traineeService.GetByNameAsync(username).ConfigureAwait(false);
+            if (trainee == null)
+            {
+                return NotFound();
+            }
+            return Ok(trainee);
+        }
         [HttpPost]
         public async Task<IActionResult> Create(Trainee trainee)
         {

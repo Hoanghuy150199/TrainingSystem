@@ -8,6 +8,7 @@ namespace MongoDB_CRUD.Services
     {
         Task<List<Trainee>> GetAllAsync();
         Task<Trainee> GetByIdAsync(string id);
+        Task<Trainee> GetByNameAsync(string username);
         Task<Trainee> CreateAsync(Trainee trainee);
         Task UpdateAsync(string id, Trainee trainee);
         Task DeleteAsync(string id);
