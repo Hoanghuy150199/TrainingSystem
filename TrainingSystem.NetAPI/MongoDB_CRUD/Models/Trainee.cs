@@ -20,7 +20,7 @@ namespace MongoDB_CRUD.Models
         [BsonElement("SkillSet")]
         public List<string> SkillSet { get; set; }
         [BsonElement("ListOfClassesCompleted")]
-        public List<Object> ListOfClassesCompleted { get; set; }
+        public List<ClassesCompleted> ListOfClassesCompleted { get; set; }
         [BsonElement("Level")]
         public string Level { get; set; }
         [BsonElement("ListOfClassesLearning")]

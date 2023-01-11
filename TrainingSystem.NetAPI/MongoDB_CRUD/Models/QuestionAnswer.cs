@@ -14,7 +14,7 @@ namespace MongoDB_CRUD.Models
         [BsonElement("CourseName")]
         public string CourseName { get; set; }
         [BsonElement("QA")]
-        public List<Object> QA { get; set; }
+        public List<QA> QA { get; set; }
         [BsonElement("SessionDescription")]
         public string SessionDescription { get; set; }
 

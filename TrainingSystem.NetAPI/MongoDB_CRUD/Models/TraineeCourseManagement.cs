@@ -16,9 +16,9 @@ namespace MongoDB_CRUD.Models
         [BsonElement("CourseName")]
         public string CourseName { get; set; }
         [BsonElement("Contents")]
-        public List<Object> Contents { get; set; }
+        public List<Content> Contents { get; set; }
         [BsonElement("FinalExam")]
-        public Object FinalExam { get; set; }
+        public FinalExam FinalExam { get; set; }
         [BsonElement("TotalScore")]
         public double TotalScore { get; set; }
         [BsonElement("Status")]
